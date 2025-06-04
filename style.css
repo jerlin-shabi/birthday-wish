@@ -1,0 +1,93 @@
+/* Ensure canvas fills entire screen behind all content */
+canvas#confetti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+}
+
+/* Updated body to be transparent over canvas */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+    background: transparent;
+    background-color: #ECE7E1; /* Let canvas show as background */
+}
+
+/* Container floats above canvas */
+.container {
+    text-align: center;
+    margin-top: 30px;
+    color: #222;
+    position: relative;
+    z-index: 1;
+}
+
+/* Bounce animation */
+h1 {
+    font-size: 2.5em;
+    animation: bounce 2s infinite;
+}
+
+.message {
+    font-size: 90px;
+    margin: 15px;
+    font-weight: bold;
+}
+
+.photo {
+    width: 150px;
+    border-radius: 15px;
+    margin-top: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.cake {
+    width: 300px;
+    margin-top: 20px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 8px 16px;
+    background: #ff4081;
+    color: white;
+    border: none;
+    font-size: 0.9em;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Responsive for small screens */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .message {
+        font-size: 1em;
+    }
+
+    .photo {
+        width: 120px;
+    }
+
+    .cake {
+        width: 250px;
+    }
+
+    button {
+        font-size: 0.8em;
+        padding: 6px 12px;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
